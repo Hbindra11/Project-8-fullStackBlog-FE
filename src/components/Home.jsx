@@ -1,4 +1,4 @@
-import cors from 'cors';
+//import cors from 'cors';
 import axios from "axios";
 import { useEffect } from "react";
 
