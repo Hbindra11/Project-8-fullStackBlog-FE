@@ -3,9 +3,10 @@ import { AppContext } from "./appContext";
 
 function AppContextProvider({ children }) {
   const [blogData, setBlogData] = useState([]);
-const[newBlog, setNewBlog] = useState([])
+  const [newBlog, setNewBlog] = useState([]);
+
   return (
-    <AppContext.Provider value={{ blogData, setBlogData,newBlog, setNewBlog }}> 
+    <AppContext.Provider value={{ blogData, setBlogData, newBlog, setNewBlog }}>
       {children}
     </AppContext.Provider>
   );

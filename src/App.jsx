@@ -7,6 +7,7 @@ import {
 import Layout from "./components/Layout";
 import Home from "./components/Home";
 import CreateBlogPost from "./components/CreateBlogPost";
+import BlogDetails from "./components/BlogDetails";
 import AppContextProvider from "./context/AppContextProvider";
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="/createPost" element={<CreateBlogPost />} />
+        <Route path="/blogDetails" element={<BlogDetails />} />
       </Route>
     )
   );
