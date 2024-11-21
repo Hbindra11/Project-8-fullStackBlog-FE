@@ -7,7 +7,7 @@ import {
 import Layout from "./components/Layout";
 import Home from "./components/Home";
 import CreateBlogPost from "./components/CreateBlogPost";
-//import AppContextProvider from "./context/AppContextProvider";
+import AppContextProvider from "./context/AppContextProvider";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -19,11 +19,9 @@ const App = () => {
     )
   );
   return (
-    //<AppContextProvider>
+    <AppContextProvider>
       <RouterProvider router={router} />
-        
-   
-    //</AppContextProvider>
+    </AppContextProvider>
   );
 };
 

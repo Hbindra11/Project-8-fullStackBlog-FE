@@ -1,10 +1,10 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
-//import { useAppContext } from "../context/appContext";
+import { useEffect } from "react";
+import { useAppContext } from "../context/appContext";
 
 const Home = () => {
-  const [blogData, setBlogData] = useState([]);
-
+ // const [blogData, setBlogData] = useState([]);
+const {blogData, setBlogData} = useAppContext();
   // const mockPosts = [
   //   {
   //     title: "Maltese summer",
@@ -34,7 +34,7 @@ const Home = () => {
   //console.log('here is the blog: '+JSON.stringify(blogData));//works!
   const handelSubmit = (e) => {
     e.preventDefault();
-    return console.log("hello, world!");
+    return console.log(JSON.stringify(blogData));
   };
 
   return (
@@ -45,7 +45,7 @@ const Home = () => {
           className="card card-side bg-base-100 shadow-2xl my-2 "
           key={crypto.randomUUID()}
         >
-          <figure className="max-w-96 min-w-96 max-h-96">
+          <figure className="max-w-96 min-w-96 max-h-44">
             <img
               src={post.cover}
               alt="missing blog post pic"
