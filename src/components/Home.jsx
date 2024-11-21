@@ -1,10 +1,9 @@
-//import cors from 'cors';
 import axios from "axios";
 import { useEffect, useState } from "react";
 //import { useAppContext } from "../context/appContext";
 
 const Home = () => {
-  const [blogData, setBlogData]  = useState([])
+  const [blogData, setBlogData] = useState([]);
 
   // const mockPosts = [
   //   {
@@ -26,34 +25,40 @@ const Home = () => {
     axios
       .get("http://localhost:3000/blogposts/")
       .then((response) => {
-       //console.log(response.data);
-       setBlogData(response.data)
+        //console.log(response.data);
+        setBlogData(response.data);
       })
       .catch((error) => console.error(error));
   }, []);
- //console.log('here is the blog: '+JSON.stringify(mockPosts));
- //console.log('here is the blog: '+JSON.stringify(blogData));//works!
+  //console.log('here is the blog: '+JSON.stringify(mockPosts));
+  //console.log('here is the blog: '+JSON.stringify(blogData));//works!
+  const handelSubmit = (e) => {
+    e.preventDefault();
+    return console.log("hello, world!");
+  };
+
   return (
     <>
       {blogData.map((post) => (
-        <div
+        <form
+          onSubmit={handelSubmit}
           className="card card-side bg-base-100 shadow-2xl my-2 "
           key={crypto.randomUUID()}
         >
-          <figure className="max-w-md max-h-96">
+          <figure className="max-w-96 min-w-96 max-h-96">
             <img
-              src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp"
-              alt="picture of New York city"
+              src={post.cover}
+              alt="missing blog post pic"
             />
           </figure>{" "}
           <div className="card-body">
             <h2 className="card-title">{post.title}</h2>
             <p className=" truncate text-ellipsis max-w-32">{post.content}</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">Details</button>
+              <button className="btn btn-accent">Details</button>
             </div>
           </div>
-        </div>
+        </form>
       ))}
     </>
   );
