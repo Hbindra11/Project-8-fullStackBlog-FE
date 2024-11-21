@@ -3,8 +3,8 @@ import { useEffect } from "react";
 import { useAppContext } from "../context/appContext";
 
 const Home = () => {
- // const [blogData, setBlogData] = useState([]);
-const {blogData, setBlogData} = useAppContext();
+  // const [blogData, setBlogData] = useState([]);
+  const { blogData, setBlogData } = useAppContext();
   // const mockPosts = [
   //   {
   //     title: "Maltese summer",
@@ -34,6 +34,8 @@ const {blogData, setBlogData} = useAppContext();
   //console.log('here is the blog: '+JSON.stringify(blogData));//works!
   const handelSubmit = (e) => {
     e.preventDefault();
+    let name = prompt("Please enter your name:");
+    console.log("Hello, " + name + "!");
     return console.log(JSON.stringify(blogData));
   };
 
@@ -46,10 +48,7 @@ const {blogData, setBlogData} = useAppContext();
           key={crypto.randomUUID()}
         >
           <figure className="max-w-96 min-w-96 max-h-44">
-            <img
-              src={post.cover}
-              alt="missing blog post pic"
-            />
+            <img src={post.cover} alt="missing blog post pic" />
           </figure>{" "}
           <div className="card-body">
             <h2 className="card-title">{post.title}</h2>
