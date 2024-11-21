@@ -7,6 +7,8 @@ import {
 import Layout from "./components/Layout";
 import Home from "./components/Home";
 import CreateBlogPost from "./components/CreateBlogPost";
+//import AppContextProvider from "./context/AppContextProvider";
+
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -16,7 +18,13 @@ const App = () => {
       </Route>
     )
   );
-  return <RouterProvider router={router}></RouterProvider>;
+  return (
+    //<AppContextProvider>
+      <RouterProvider router={router} />
+        
+   
+    //</AppContextProvider>
+  );
 };
 
 export default App;
