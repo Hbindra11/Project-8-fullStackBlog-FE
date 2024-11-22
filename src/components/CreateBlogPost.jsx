@@ -4,19 +4,27 @@ import axios from "axios";
 
 const CreateBlogPost = () => {
   const navigate = useNavigate();
+  const { newBlog, setNewBlog } = useAppContext();
+  
   const handelSubmit = (e) => {
     e.preventDefault();
     //post newBlog to database
     axios
       .post("http://localhost:3000/blogPosts/", newBlog)
-      .then((res) => {console.log("here is the response: " + res.data); alert('data was successfully saved!');  setNewBlog([]);})
-      .catch ((err) => {console.error("error message: " + err); alert('oops! something went wrong!')})
+      .then((res) => {
+        console.log("here is the response: " + res.data);
+        alert("data was successfully saved!");
+        setNewBlog([]);
+      })
+      .catch((err) => {
+        console.error("error message: " + err);
+        alert("oops! something went wrong!");
+      });
     //reset newBlog back to empty array
-   
-      return navigate("/");
+
+    return navigate("/");
   };
 
-  const { newBlog, setNewBlog } = useAppContext();
   const handelChange = (e) => {
     setNewBlog((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     // console.log('this is the input so far: '+JSON.stringify(newBlog));

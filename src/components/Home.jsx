@@ -2,24 +2,19 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useAppContext } from "../context/appContext";
 import { Link } from "react-router-dom";
+
 const Home = () => {
-  
-  const { blogData, setBlogData } = useAppContext();
- 
+  const { blogData, setBlogData, newBlog } = useAppContext();
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/blogposts/")
+      .get("http://localhost:3000/blogposts")
       .then((response) => {
         console.log(response.data);
         setBlogData(response.data);
       })
       .catch((error) => console.error(error));
-  },[]);
- 
-  //let name = prompt("Please enter your name:");
-  //console.log("Hello, " + name + "!");
-  
+  }, [newBlog]);
 
   return (
     <>
@@ -35,7 +30,9 @@ const Home = () => {
             <h2 className="card-title">{post.title}</h2>
             <p className=" truncate text-ellipsis max-w-32">{post.content}</p>
             <div className="card-actions justify-end">
-              <Link to={`/blogDetails/${post.id}`} className="underline">Blog details</Link>
+              <Link to={`/blogDetails/${post.id}`} className="underline">
+                Blog details
+              </Link>
             </div>
           </div>
         </div>
