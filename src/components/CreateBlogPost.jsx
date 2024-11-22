@@ -86,7 +86,7 @@ const CreateBlogPost = () => {
           <button type="submit" className="btn btn-accent">
             Save
           </button>
-        </form>{" "}
+        </form>
         <figure className="max-w-lg  p-10">
           <img
             src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.webp"

@@ -30,7 +30,7 @@ const Home = () => {
             <h2 className="card-title">{post.title}</h2>
             <p className=" truncate text-ellipsis max-w-32">{post.content}</p>
             <div className="card-actions justify-end">
-              <Link to={`/blogDetails/${post.id}`} className="underline">
+              <Link to={`/blogDetails/${post.id}`} className="underline link link-secondary">
                 Blog details
               </Link>
             </div>
