@@ -26,8 +26,11 @@ This project leverages two official Vite plugins for React development:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md): Uses [Babel](https://babeljs.io/) for Fast Refresh.
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc): Uses [SWC](https://swc.rs/) for Fast Refresh.
-
 ## Getting Started
+
+To get started with this project, you can either run it locally or explore the live static website hosted here: [Live Demo](https://project-8-fullstackblog-fe.onrender.com/).
+
+### Running Locally
 
 Follow these steps to set up and run the project locally:
 
@@ -49,3 +52,5 @@ Follow these steps to set up and run the project locally:
     ```
 
 With these steps, you'll have the frontend application up and running in no time!
+
+Follow these steps to set up and run the project locally:
