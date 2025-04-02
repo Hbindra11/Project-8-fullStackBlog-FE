@@ -1,12 +1,22 @@
 import { useState } from "react";
 import { AppContext } from "./appContext";
 
+// AppContextProvider component to provide context values to the application
 function AppContextProvider({ children }) {
-  const [blogData, setBlogData] = useState([]); //for all blogs
-  const [newBlog, setNewBlog] = useState([]); //only new blogs
-  const [aBlog, setaBlog] = useState([]); //when fetching one blog
-  const [updateBlog, setUpdateBlog] = useState([]); //when fetching one blog
+  // State to store all blogs
+  const [blogData, setBlogData] = useState([]);
+  
+  // State to store only new blogs
+  const [newBlog, setNewBlog] = useState([]);
+  
+  // State to store a single blog when fetching one blog
+  const [aBlog, setaBlog] = useState([]);
+  
+  // State to store a blog when updating it
+  const [updateBlog, setUpdateBlog] = useState([]);
+
   return (
+    // Providing all state values and their setters to the context
     <AppContext.Provider
       value={{
         blogData,
